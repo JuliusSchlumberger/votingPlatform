@@ -52,12 +52,14 @@ def handle_submission(submit_n_clicks, stored_user_id, pathname, *dropdown_value
     if submit_n_clicks > 0:
 
         # Check if the user ID and URL combination is valid
-        if (pathname == '/peiling' and user_id not in RESTRICTED_IDS_PEILING_ONLY) or \
-           (pathname == '/stemming' and user_id not in RESTRICTED_IDS_STEMMING_ONLY):
+        if (pathname == '/stemming' and user_id not in RESTRICTED_IDS_STEMMING_ONLY):
+            print('wrong id')
             return False, False, True  # Show the wrong user ID modal if the combination is not valid
 
         filled_dropdowns = [v for v in dropdown_values if v is not None]
+        print(len(filled_dropdowns))
         if 0 < len(filled_dropdowns) < len(CANDIDATES):
+            print('ranks not complete')
             return True, False, False
 
         user_data[user_id] = {
@@ -70,7 +72,7 @@ def handle_submission(submit_n_clicks, stored_user_id, pathname, *dropdown_value
         except Exception as e:
             print(f"Error storing data: {e}")
             return False, False, True
-
+        print('sucessful')
         return False, True, False
 
     return False, False, False
