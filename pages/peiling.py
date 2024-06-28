@@ -32,7 +32,7 @@ layout = dbc.Container([
 
     # Question 1 section
     html.Div(id="peiling-1", children=[
-        dbc.Row(dbc.Col(html.H3("When did you start living at the Nieuwelaan?", className="text-success"),
+        dbc.Row(dbc.Col(html.H4("When did you start living at the Nieuwelaan?", className="text-success"),
                         width=12), className="mt-3"),
         dbc.Row(dbc.Col(dcc.Dropdown(
             id='peiling-q1',
@@ -49,7 +49,7 @@ layout = dbc.Container([
 
     # Question 3 section with dropdowns
     html.Div(id="peiling-3", children=[
-        dbc.Row(dbc.Col(html.H3("Which method do you find most appropriate for the Nieuwelaan?", className="text-success"), width=12),
+        dbc.Row(dbc.Col(html.H4("Which method do you find most appropriate for the Nieuwelaan?", className="text-success"), width=12),
                 className="mt-3"),
         dbc.Row(
             dbc.Col(html.P("Please give the top 5 methods you find most appropriate for the Nieuwelaan. Rank them in order of your preference. "),
@@ -98,7 +98,7 @@ layout = dbc.Container([
 
 # Question 2 section
     html.Div(id="peiling-2", children=[
-        dbc.Row(dbc.Col(html.H2("Question 2", className="text-success"), width=12), className="mt-3"),
+        dbc.Row(dbc.Col(html.H4("Wat je ons nog mee wilt geven", className="text-success"), width=12), className="mt-3"),
         dbc.Row(dbc.Col(dcc.Textarea(
             id='peiling-q2',
             placeholder='Is there anything you want to give us on the road for the decision on affordability at the Nieuwelaan?'

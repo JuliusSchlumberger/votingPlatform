@@ -18,12 +18,8 @@ INTRODUCTION_PEILING = html.Div([
                "verplichting voor de leden om hun mening over de methodes te veranderen."),
         "Er zijn verschillende opties hoe jullie mening meegenomend kan worden:",
         html.Br(),
-        "1) Je geeft geranschikt orde van jullie top 5 methodes uit de lijst van 11 methodes + 4 varianten."
-        html.Br(),html.Br(),
-        "en / of",
-        html.Br(),
-        html.Br(),
-        "Je deelt jouw algemeen mening in een vrije tekst"])
+        "1) Je geeft geranschikt orde van jullie top 5 methodes uit de lijst van 11 methodes + 4 varianten.        EN / OF        "
+        "2) Je deelt jouw algemeen mening in een vrije tekst"])
 
 
 
