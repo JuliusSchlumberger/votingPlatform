@@ -7,7 +7,11 @@ CANDIDATES = pd.read_excel('assets/options.xlsx')['Options']
 print(CANDIDATES)
 
 INTRODUCTION = html.P(
-        "Welcome to the voting platform. Please read the instructions and proceed to vote on the following questions.")
+        "Welkom op het stemplatform. Zoals besloten in de ALV van 26 juni gebruiken we het Instant-Runoff-Model om "
+        " te bepalen welke methode de meeste voorkeur heeft om de betaalbaarheid aan de Nieuwelaan te bepalen. Jullie hebben allemaal de tijd gehad om "
+        "naar het rapport met daarin de beschrijving van de methoden, de feedback van de gemeenschap van vandaag, de peiling "
+        "met oud-leden en aspirant-leden, het perspectief vanuit de Commissie van Toezicht en de evaluatie door STUT."
+        " Vul je stem in en verstuur. Mocht je een fout hebben gemaakt, dan kun je gewoon opnieuw insturen.")
 
 INTRODUCTION_PEILING = html.Div([
         html.P(" Tijdens de discussie over wat betaalbaarheid voor de Nieuwelaan zou betekenen hebben we ook gepraat "
@@ -17,10 +21,11 @@ INTRODUCTION_PEILING = html.Div([
                "Deze peiling heeft als doel de huidige leden meer context te geven over welke methode betrokken "
                "partijen redelijk vinden om de betaalbaarheid voor de NWL te bepalen. Er volgt uit deze peiling geen "
                "verplichting voor de leden om hun mening over de methodes te veranderen."),
-        "Er zijn verschillende opties hoe jullie mening meegenomend kan worden:",
-        html.Br(),
-        "1) Je geeft geranschikt orde van jullie top 5 methodes uit de lijst van 11 methodes + 4 varianten.        EN / OF        "
-        "2) Je deelt jouw algemeen mening in een vrije tekst"])
+        html.P("Er zijn verschillende opties hoe jullie mening meegenomen kan worden:"),
+    html.Ul([
+        html.Li("je geeft geranschikt orde van jullie top 5 methodes uit de lijst van mogelijkheden."),
+            html.B("en/of"),
+        html.Li("je deelt jouw algemeen mening in een vrije tekst.")])])
 
 
 

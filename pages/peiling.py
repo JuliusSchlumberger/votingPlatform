@@ -1,5 +1,5 @@
 import dash
-from dash import html, dcc, callback, Input, Output
+from dash import html, dcc
 import dash_bootstrap_components as dbc
 from assets.static_inputs import CANDIDATES, INTRODUCTION_PEILING
 
@@ -32,16 +32,16 @@ layout = dbc.Container([
 
     # Question 1 section
     html.Div(id="peiling-1", children=[
-        dbc.Row(dbc.Col(html.H4("When did you start living at the Nieuwelaan?", className="text-success"),
+        dbc.Row(dbc.Col(html.H4("Wanneer ben je op de Nieuwelaan gaan wonen?", className="text-success"),
                         width=12), className="mt-3"),
         dbc.Row(dbc.Col(dcc.Dropdown(
             id='peiling-q1',
             options=[
-                {'label': 'before 01/01/2012', 'value': 'before 01/01/2012'},
-                {'label': 'between 01/01/2012 and 01/01/2019', 'value': 'between 01/01/2012 and 01/01/2019'},
-                {'label': 'after 01/01/2019', 'value': 'after 01/01/2019'}
+                {'label': 'vóór 01/01/2012', 'value': 'vóór 01/01/2012'},
+                {'label': 'tussen 01/01/2012 en 20/10/2019', 'value': 'tussen 01/01/2012 en 20/10/2019'},
+                {'label': 'after 01/01/2019', 'value': 'na 01/01/2019'}
             ],
-            placeholder='Select an option',
+            placeholder='Kiez een periode',
             className="mb-3"
         ), width=12)),
     ]),
@@ -49,25 +49,23 @@ layout = dbc.Container([
 
     # Question 3 section with dropdowns
     html.Div(id="peiling-3", children=[
-        dbc.Row(dbc.Col(html.H4("Which method do you find most appropriate for the Nieuwelaan?", className="text-success"), width=12),
+        dbc.Row(dbc.Col(html.H4("Welke methoden vindt je het meest geschikt voor de Nieuwelaan?", className="text-success"), width=12),
                 className="mt-3"),
         dbc.Row(
-            dbc.Col(html.P("Please give the top 5 methods you find most appropriate for the Nieuwelaan. Rank them in order of your preference. "),
-                    width=12)),
+            dbc.Col(html.Div(["Geef de top 5 van methoden die je het meest geschikt vindt om de betaalbaarheid voor de Nieuwelaan te bepalen.",
+                              html.B(" Rangschik ze wel in volgorde van je voorkeur!"),]
+                    ),width=12)),
 
         *[dbc.Row(dbc.Col(dcc.Dropdown(
             id=f'dropdown_peiling-{i}',
             options=[{'label': candidate, 'value': candidate} for candidate in candidates],
-            placeholder=f'Choose your {i + 1}{get_choice_suffix(i + 1)} choice'
+            placeholder=f'Choose your {i + 1}{get_choice_suffix(i + 1)} preference'
         ), width=12), className="mb-3") for i in range(5)],
 # Modals for pop-up messages
     dbc.Modal(
         [
             dbc.ModalHeader(dbc.ModalTitle("Incomplete Submission")),
-            dbc.ModalBody("Please fill in all the ranks for Question 3 before submitting."),
-            # dbc.ModalFooter(
-            #     dbc.Button("Close", id="close-incomplete_peiling", className="ms-auto", n_clicks=0)
-            # ),
+            dbc.ModalBody("Geef een lijst van 5 methoden (in volgorde van voorkeur voordat je ze indient). Als je geen voorkeur wilt opgeven, houd dan alle drop-downs leeg."),
         ],
         id="incomplete-modal_peiling",
         is_open=False,
@@ -75,10 +73,9 @@ layout = dbc.Container([
     dbc.Modal(
         [
             dbc.ModalHeader(dbc.ModalTitle("Submission Successful")),
-            dbc.ModalBody("Your vote has been successfully submitted."),
-            # dbc.ModalFooter(
-            #     dbc.Button("Close", id="close-success_peiling", className="ms-auto", n_clicks=0)
-            # ),
+            dbc.ModalBody("Je mening is succesvol ingediend. Bedankt voor het delen van je perspectieven, je kunt dit venster nu sluiten."
+                          " Je kunt je invoer aanpassen voor het geval "
+                          "je een fout hebt gemaakt en gewoon opnieuw indienen."),
         ],
         id="success-modal_peiling",
         is_open=False,
@@ -86,10 +83,8 @@ layout = dbc.Container([
     dbc.Modal(
         [
             dbc.ModalHeader(dbc.ModalTitle("Invalid User ID")),
-            dbc.ModalBody("The user ID you entered is not correct for this section. Please go back to Home and fill in your userid again."),
-            # dbc.ModalFooter(
-            #     dbc.Button("Close", id="close-wrong-userid-modal_peiling", className="ms-auto", n_clicks=0)
-            # ),
+            dbc.ModalBody("De user-ID die je hebt ingevoerd is niet correct voor deze sectie. Ga terug naar Home "
+                          "en vul uw gebruikers-ID (die je per e-mail hebt ontvangen) opnieuw in."),
         ],
         id="wrong-userid-modal_peiling",
         is_open=False,
@@ -101,8 +96,8 @@ layout = dbc.Container([
         dbc.Row(dbc.Col(html.H4("Wat je ons nog mee wilt geven", className="text-success"), width=12), className="mt-3"),
         dbc.Row(dbc.Col(dcc.Textarea(
             id='peiling-q2',
-            placeholder='Is there anything you want to give us on the road for the decision on affordability at the Nieuwelaan?'
-                        ' Are there any methods of that that you would strongly advise against?',
+            placeholder='Is er iets dat u ons mee wilt geven op weg naar het besluit over de betaalbaarheid aan de '
+                        'Nieuwelaan? Zijn er bijvoorbeeld methodes die je sterk afraadt?',
             style={'width': '100%', 'height': '100px'},
             className="mb-3 form-control"
         ), width=12)),

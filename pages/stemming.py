@@ -1,12 +1,5 @@
 import dash
-from dash import html, dcc, callback, Input, Output
-import dash_bootstrap_components as dbc
-from assets.static_inputs import CANDIDATES, INTRODUCTION
-
-
-dash.register_page(__name__, path='/peiling')
-import dash
-from dash import html, dcc, callback, Input, Output
+from dash import html, dcc
 import dash_bootstrap_components as dbc
 from assets.static_inputs import CANDIDATES, INTRODUCTION
 
@@ -33,7 +26,7 @@ def get_choice_suffix(index):
 layout = dbc.Container([
 # Introduction section
     # Introduction section
-    dbc.Row(dbc.Col(html.H3("Introduction", className="text-success"), width=12), className="mt-3"),
+    dbc.Row(dbc.Col(html.H3("Stemming", className="text-success"), width=12), className="mt-3"),
     dbc.Row(dbc.Col(INTRODUCTION,
                     width=12), className="mb-3 "),
 
@@ -41,7 +34,7 @@ layout = dbc.Container([
 
     # Question 3 section with dropdowns
     html.Div(id="stemming-1", children=[
-        dbc.Row(dbc.Col(html.H3("Which method do you find most appropriate for the Nieuwelaan?", className="text-success"), width=12),
+        dbc.Row(dbc.Col(html.H4("Welke methoden vindt je het meest geschikt voor de Nieuwelaan?", className="text-success"), width=12),
                 className="mt-3"),
         dbc.Row(
             dbc.Col(html.P("Please rank all methods according to your preference."),
@@ -64,7 +57,8 @@ layout = dbc.Container([
     dbc.Modal(
         [
             dbc.ModalHeader(dbc.ModalTitle("Submission Successful")),
-            dbc.ModalBody("Your vote has been successfully submitted."),
+            dbc.ModalBody("Your vote has been successfully submitted. Thanks for taking part in the vote. "
+                          "If you made a mistake, you can just correct it and re-submit your vote."),
         ],
         id="success_stemming-modal",
         is_open=False,
@@ -73,7 +67,7 @@ layout = dbc.Container([
     dbc.Modal(
             [
                 dbc.ModalHeader(dbc.ModalTitle("Invalid User ID")),
-                dbc.ModalBody("The user ID you entered is not correct for the Stemming. Please go back to Home and fill in your userid again."),
+                dbc.ModalBody("The user ID you entered is not correct for the Stemming. Please go back to Home and fill in your user ID again."),
             ],
             id="wrong-userid_stemming-modal",
             is_open=False,

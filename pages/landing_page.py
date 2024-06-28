@@ -25,37 +25,38 @@ visualization = dbc.Container([
                    "stellen in welke mate ieder lid en oud lid gerechtigd is in het totale opgebouwde vermogen van de "
                    "vereniging en of de leden en oudleden een uitkering kunnen krijgen uit dit opgebouwd vermogen. "
                    "Hierbij dient in acht te worden genomen dat de betaalbaarheid van het wonen gewaarborgd blijft. "
-                   "De uitkerings bedrag bestaat uit het geld in de "
+                   "Het uitkeringsbedrag bestaat uit het geld in de "
                    "algemene reserve, vermeerderd met een extra lening (artikel 8 lid 5). In feite bepaalt de hoogte van een (nog) "
                    "betaalbare contributie dus hoeveel we kunnen herfinancieren en daarmee ook hoeveel van ons "
-                   "vermogen we uit kunnen keren. Het begrip betaalbaarheid wordt in de statuten niet verder gespecificeerd, wat ons nu voor de taak "
+                   "vermogen we uit kunnen keren (hoe meer contributie we betalen, hoe meer we kunnen besteden aan een nieuwe lening)."),
+            html.P("Het begrip betaalbaarheid wordt in de statuten niet verder gespecificeerd, wat ons nu voor de taak "
                    "stelt om duidelijke criteria en methodes te ontwikkelen voor het bepalen van wat als betaalbaar "
-                   "wonen geldt. Echter, er is geen expliciete richtlijn over hoe deze contributie bijdraagt aan het handhaven "
-                   "van betaalbaarheid, wat ons de ruimte en verplichting geeft om een methode te vinden die wij "
+                   "wonen geldt. Echter, er is geen expliciete richtlijn over hoe we de hoogte van de contributie moeten handhaven dat het "
+                   "betaalbaarheid blijvt, wat ons de ruimte en verplichting geeft om een methode te vinden die wij "
                    "objectief en eerlijk vinden."),
         ], width=9)
     ]),
     dbc.Row([
         dbc.Col(html.Div([
-            html.P("Dat betekent dat een methode aan de volgende vier criteria "
+            html.P("Het lijkt ons dat een methode aan de volgende criteria "
                    "zou moeten voldoen:"),
             html.Ul([
                 html.Li([html.B("Eenduidig. "),
                          "Wij bedoelen daarmee dat de uitkomst voor iedereen hetzelfde is en er geen discussie over de "
                          "toepassing van de methode en de uitkomst daarvan kan ontstaan."]),
                 html.Li([html.B("Controleerbaar. "),
-                         "De gebruikte data moet traceerbaar zijn. Data moet ook het liefst makkelijk verkrijgbaar zijn. "
-                         "Ook als je bijvoorbeeld een paar jaar later nog wilt controleren."]),
+                         "De gebruikte data moet traceerbaar zijn. Data moet ook het liefst makkelijk verkrijgbaar zijn, "
+                         "ook als je bijvoorbeeld een paar jaar later nog wilt controleren."]),
                 html.Li([html.B("Algemeen aanvaard.")]),
                 html.Li([html.B("Toekomstbestendig. "),
                          "Zeker weten doe je het nooit, maar we vinden dat er een methode gekozen moet worden waarvan "
-                         "verwacht mag worden dat je deze over 15 en 30 jaar ook toe kan passen."])
+                         "verwacht mag worden dat je deze over 15 en 30 jaar opnieuw toe kunt passen."])
             ]),
             html.P(
-                "Met deze pagina gaan we een peiling doen voor oud-leden en aspirant leden om hun inschatting als extra context mee te nemen en de stemming met "
-                "huidige leden over welke methode wij willen gebruiken om betaalbaarheid op de Nieuwelaan te bepalen."),
+                "Met deze pagina gaan we een peiling doen voor oud-leden en aspirant-leden om hun inschatting als extra context mee te nemen in de stemming. "
+                "Huidige leden stemmen met deze pagina op 18 juli 2024 over welke methode wij willen gebruiken om betaalbaarheid op de Nieuwelaan te bepalen."),
             html.B(html.P(
-                "Please fill in your unique code that was sent to you by email to be able to access the voting/peiling.")),
+                "Vul je unieke code in die je per e-mail is toegestuurd om toegang te krijgen tot de peiling (oud-leden en aspirant-leden) of de stemming (leden).")),
             dbc.Input(id='user-id', placeholder='Enter your user ID', type='text', className='mb-3'),
         ]), width=12),]),
     # Submit button
