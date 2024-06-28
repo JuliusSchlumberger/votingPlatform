@@ -4,7 +4,6 @@ import dash_bootstrap_components as dbc
 
 CANDIDATES = [f"Candidate {i}" for i in range(1, 11)]
 CANDIDATES = pd.read_excel('assets/options.xlsx')['Options']
-print(CANDIDATES)
 
 INTRODUCTION = html.P(
         "Welkom op het stemplatform. Zoals besloten in de ALV van 26 juni gebruiken we het Instant-Runoff-Model om "
