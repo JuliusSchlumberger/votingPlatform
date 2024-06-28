@@ -3,7 +3,8 @@ import pandas as pd
 import dash_bootstrap_components as dbc
 
 CANDIDATES = [f"Candidate {i}" for i in range(1, 11)]
-CANDIADTES = pd.read_excel('assets/options.xlsx')['Options']
+CANDIDATES = pd.read_excel('assets/options.xlsx')['Options']
+print(CANDIDATES)
 
 INTRODUCTION = html.P(
         "Welcome to the voting platform. Please read the instructions and proceed to vote on the following questions.")

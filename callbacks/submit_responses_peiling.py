@@ -15,7 +15,7 @@ import json
 from assets.static_inputs import RESTRICTED_IDS_PEILING_ONLY, RESTRICTED_IDS_STEMMING_ONLY, CANDIDATES
 
 # Replace with your actual PostgreSQL connection URL
-DATABASE_URL = "postgresql://username:password@hostname:port/dbname"
+DATABASE_URL = "postgres://u7k76igpes7s20:pdd4bf70bb822d043b266665aacad3f9895fcab40f86f2b597dfb5ecf0c76ca5d@c6i386kdr73gcp.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d7u15402g5vmi0"
 
 # Set up SQLAlchemy
 engine = create_engine(DATABASE_URL)
