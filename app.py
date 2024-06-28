@@ -4,7 +4,7 @@ from dash import dcc, Input, Output, html, ClientsideFunction, callback_context
 from components import content, header
 # # from callbacks import toggle_tabs
 # import dash
-from callbacks import update_dropdowns_stemming, update_dropdowns_peiling, handle_submission_peiling, handle_submission_stemming, verify_user_id
+from callbacks import update_dropdowns_stemming, update_dropdowns_peiling, verify_user_id, submit_responses_peiling, submit_responses_stemming
 
 from dashapp import app
 

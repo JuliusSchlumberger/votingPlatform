@@ -24,8 +24,8 @@ csv_content = df.to_csv(index=False)
 # GitHub upload details
 GITHUB_TOKEN = os.getenv('GITHUB_TOKEN')
 GITHUB_REPO = os.getenv('GITHUB_REPO')
-GITHUB_API_URL = f'https://api.github.com/repos/{GITHUB_REPO}/contents/survey_responses.csv'
-message = "Add survey responses CSV"
+GITHUB_API_URL = f'https://api.github.com/repos/{GITHUB_REPO}/contents/peiling_responses.csv'
+message = "Add peiling responses CSV"
 
 # Encode CSV content to base64
 encoded_content = base64.b64encode(csv_content.encode()).decode()
