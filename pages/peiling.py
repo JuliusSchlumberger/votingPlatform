@@ -1,7 +1,7 @@
 import dash
 from dash import html, dcc, callback, Input, Output
 import dash_bootstrap_components as dbc
-from assets.static_inputs import CANDIDATES, INTRODUCTION
+from assets.static_inputs import CANDIDATES, INTRODUCTION_PEILING
 
 
 dash.register_page(__name__, path='/peiling')
@@ -27,7 +27,7 @@ layout = dbc.Container([
 # Introduction section
     # Introduction section
     dbc.Row(dbc.Col(html.H3("Peiling", className="text-success"), width=12), className="mt-3"),
-    dbc.Row(dbc.Col(INTRODUCTION,
+    dbc.Row(dbc.Col(INTRODUCTION_PEILING,
                     width=12), className="mb-3 "),
 
     # Question 1 section
