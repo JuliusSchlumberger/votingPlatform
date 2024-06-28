@@ -1,6 +1,8 @@
 from dash import html
+import pandas as pd
 
 CANDIDATES = [f"Candidate {i}" for i in range(1, 11)]
+CANDIADTES = pd.read_excel('assets/options.xlsx')['Options']
 
 INTRODUCTION = html.P(
         "Welcome to the voting platform. Please read the instructions and proceed to vote on the following questions.")
