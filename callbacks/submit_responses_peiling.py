@@ -36,9 +36,9 @@ def save_response_to_db(user_id, page, data):
     session.close()
 
 @app.callback(
-    [Output('incomplete_peiling-modal', 'is_open'), Output('success_peiling-modal', 'is_open'),
-     Output('wrong-userid_peiling-modal', 'is_open')],
-    [Input('submit_peiling-button', 'n_clicks')],
+    [Output('incomplete-modal_peiling', 'is_open'), Output('success-modal_peiling', 'is_open'),
+     Output('wrong-userid-modal_peiling', 'is_open')],
+    [Input('submit-button_peiling', 'n_clicks')],
     [State('stored-user-id', 'data'), State('url', 'pathname')] +
     [State(f'dropdown_peiling-{i}', 'value') for i in range(len(CANDIDATES))]
 )
