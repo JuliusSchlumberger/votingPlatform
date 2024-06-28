@@ -1,0 +1,3 @@
+id,user_id,page,data
+1,user1,/peiling,"{""rankings"": [null, null, null, null, null], ""periode"": ""v\u00f3\u00f3r 01/01/2012"", ""comment"": ""empty""}"
+2,user2,/peiling,"{""rankings"": [""Contributie op basis van inkomen van een 18-jarige"", ""Terugrekenen vanaf inkomen/ bijstandsniveau (voor student)"", ""Terugrekenen vanaf inkomen/ bijstandsniveau (voor mens in bijstand)"", ""CAO loonontwikkeling"", ""Huurpuntensysteem: Onzelfstandige woonruimte (gereduceerd met 1,3 klusuren \u00e0 \u20ac15,- / h)""], ""periode"": ""na 01/01/2019"", ""comment"": ""thanks""}"
