@@ -59,7 +59,7 @@ def handle_submission(submit_n_clicks, stored_user_id, pathname, periode, vrije_
             return False, False, True  # Show the wrong user ID modal if the combination is not valid
 
         filled_dropdowns = [v for v in dropdown_values if v is not None]
-        if 0 < len(filled_dropdowns) < len(CANDIDATES):
+        if 0 < len(filled_dropdowns) < 5:
             return True, False, False
 
         user_data[user_id] = {
