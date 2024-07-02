@@ -30,21 +30,21 @@ layout = dbc.Container([
     dbc.Row(dbc.Col(INTRODUCTION_PEILING,
                     width=12), className="mb-3 "),
 
-    # Question 1 section
-    html.Div(id="peiling-1", children=[
-        dbc.Row(dbc.Col(html.H4("Wanneer ben je op de Nieuwelaan gaan wonen?", className="text-success"),
-                        width=12), className="mt-3"),
-        dbc.Row(dbc.Col(dcc.Dropdown(
-            id='peiling-q1',
-            options=[
-                {'label': 'vóór 01/01/2012', 'value': 'vóór 01/01/2012'},
-                {'label': 'tussen 01/01/2012 en 20/10/2019', 'value': 'tussen 01/01/2012 en 20/10/2019'},
-                {'label': 'after 01/01/2019', 'value': 'na 01/01/2019'}
-            ],
-            placeholder='Kiez een periode',
-            className="mb-3"
-        ), width=12)),
-    ]),
+    # # Question 1 section
+    # html.Div(id="peiling-1", children=[
+    #     dbc.Row(dbc.Col(html.H4("Wanneer ben je op de Nieuwelaan gaan wonen?", className="text-success"),
+    #                     width=12), className="mt-3"),
+    #     dbc.Row(dbc.Col(dcc.Dropdown(
+    #         id='peiling-q1',
+    #         options=[
+    #             {'label': 'vóór 01/01/2012', 'value': 'vóór 01/01/2012'},
+    #             {'label': 'tussen 01/01/2012 en 20/10/2019', 'value': 'tussen 01/01/2012 en 20/10/2019'},
+    #             {'label': 'after 01/01/2019', 'value': 'na 01/01/2019'}
+    #         ],
+    #         placeholder='Kiez een periode',
+    #         className="mb-3"
+    #     ), width=12)),
+    # ]),
 
 
     # Question 3 section with dropdowns

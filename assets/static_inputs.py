@@ -4,6 +4,12 @@ import dash_bootstrap_components as dbc
 
 CANDIDATES = [f"Candidate {i}" for i in range(1, 11)]
 CANDIDATES = pd.read_excel('assets/options.xlsx')['Options']
+CANDIDATES_Keys = pd.read_excel('assets/options.xlsx')['Key'].astype(str)
+print(pd.read_excel('assets/options.xlsx'))
+COLORS = pd.read_excel('assets/options.xlsx')['Colors3']
+Colors_to_Candidates = {CANDIDATES[i]: COLORS[i] for i in range(len(CANDIDATES))}
+
+Keys_to_Candidates = {CANDIDATES[i]: CANDIDATES_Keys[i] for i in range(len(CANDIDATES))}
 
 INTRODUCTION = html.P(
         "Welkom op het stemplatform. Zoals besloten in de ALV van 26 juni gebruiken we het Instant-Runoff-Model om "
@@ -29,6 +35,11 @@ INTRODUCTION_PEILING = html.Div([
 
 
 # List of user IDs that are restricted from accessing the /peiling page
-RESTRICTED_IDS_PEILING_ONLY = ['user1', 'user2', 'user3']  # example restricted user IDs
+# RESTRICTED_IDS_PEILING_ONLY = ['user1', 'user2', 'user3']  # example restricted user IDs
+# RESTRICTED_IDS_STEMMING_ONLY = ['user4', 'user5', 'user6']  # example restricted user IDs
 
-RESTRICTED_IDS_STEMMING_ONLY = ['user4', 'user5', 'user6']  # example restricted user IDs
+excel_with_ids = pd.read_excel('assets/peiling_with_identifiers.xlsx')
+RESTRICTED_IDS_PEILING_ONLY = excel_with_ids[excel_with_ids.Vote == 'P'].copy()['Identifier'].values
+# print(RESTRICTED_IDS_PEILING_ONLY)
+RESTRICTED_IDS_STEMMING_ONLY = excel_with_ids[excel_with_ids.Vote == 'S'].copy()['Identifier'].values
+

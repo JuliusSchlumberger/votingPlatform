@@ -8,7 +8,7 @@ import json
 from assets.static_inputs import RESTRICTED_IDS_PEILING_ONLY, RESTRICTED_IDS_STEMMING_ONLY, CANDIDATES
 
 # Replace with your actual PostgreSQL connection URL
-DATABASE_URL = "postgresql://u7k76igpes7s20:pdd4bf70bb822d043b266665aacad3f9895fcab40f86f2b597dfb5ecf0c76ca5d@c6i386kdr73gcp.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d7u15402g5vmi0"
+DATABASE_URL = "postgresql://u3504p7koghd0t:p1137c9e21197f7bb29c4d2c5c709b856e3418e904cdf4652e37aa6f7efb05576@cjpee40i0fqgl.cluster-czz5s0kz4scl.eu-west-1.rds.amazonaws.com:5432/d1p2f4i9n451f8"
 
 # Set up SQLAlchemy
 engine = create_engine(DATABASE_URL)
@@ -40,11 +40,11 @@ def save_response_to_db(user_id, page, data):
      Output('wrong-userid-modal_peiling', 'is_open')],
     [Input('submit-button_peiling', 'n_clicks'),
      ],
-    [State('stored-user-id', 'data'), State('url', 'pathname'), State('peiling-q1', 'value'),
+    [State('stored-user-id', 'data'), State('url', 'pathname'),
      State('peiling-q2', 'value')] +
     [State(f'dropdown_peiling-{i}', 'value') for i in range(5)]
 )
-def handle_submission(submit_n_clicks, stored_user_id, pathname, periode, vrije_vraag, *dropdown_values):
+def handle_submission(submit_n_clicks, stored_user_id, pathname, vrije_vraag, *dropdown_values):
     user_data = {}
     if not stored_user_id or 'id' not in stored_user_id:
         return False, False, True
@@ -63,8 +63,7 @@ def handle_submission(submit_n_clicks, stored_user_id, pathname, periode, vrije_
             return True, False, False
 
         user_data[user_id] = {
-            'rankings': dropdown_values,
-            'periode': periode,
+            'rankings': '>>'.join(dropdown_values),
             'comment': vrije_vraag
         }
 
